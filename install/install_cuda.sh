@@ -3,7 +3,8 @@
 source /root/install/utils.sh
 now cuda_build_start
 
-source scl_source enable devtoolset-2 >/dev/null 2>&1 || echo GCC 4.8 enabled
+# Don't use devtoolset-2 for this config
+#source scl_source enable devtoolset-2 >/dev/null 2>&1 || echo GCC 4.8 enabled
 
 case "cuda-$1" in
         cuda-4.2)

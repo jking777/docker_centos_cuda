@@ -11,10 +11,11 @@ now packages_start
 now packages_stop
 echo_total packages_start packages_stop Basic packages installed!
 
-now devtools_start
-/root/install/install_devtoolsets.sh  	$os_ver
-now devtools_stop
-echo_total devtools_start devtools_stop Devtoolset installed!
+# We don't want devtoolsets in this image
+#now devtools_start
+#/root/install/install_devtoolsets.sh  	$os_ver
+#now devtools_stop
+#echo_total devtools_start devtools_stop Devtoolset installed!
 
 # make sure we use gcc/g++ 4.8 for building here on out
 source scl_source enable devtoolset-2 >/dev/null 2>&1 || echo GCC 4.8 enabled

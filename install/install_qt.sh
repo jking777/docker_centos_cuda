@@ -39,15 +39,20 @@ yum install -y \
         $qtLibDeps \
         $smDevelLib
 
-# make sure we use gcc/g++ 4.8 for building
-source scl_source enable devtoolset-2 >/dev/null 2>&1 || echo GCC 4.8 enabled
+## make sure we use gcc/g++ 4.8 for building
+#source scl_source enable devtoolset-2 >/dev/null 2>&1 || echo GCC 4.8 enabled
+
+# Comment out above because we want to use stock gcc for Qt build.
+# Also do "build" instead of "download" in the case statement below
+
 
 # Qt 4.8.x ----------------------------------------------------------------------------------------
-case "download" in
+#case "download" in
+case "build" in
     "build")
         qtTag=qt-everywhere-opensource-src-4.8.7
         qtPkg=${qtTag}.tar.gz
-        qtUrl=https://download.qt.io/official_releases/qt/4.8/4.8.7/$qtPkg
+        qtUrl=https://download.qt.io/archive/qt/4.8/4.8.7/$qtPkg
 
         wget --no-check-certificate -O /root/$qtPkg $qtUrl \
                 && cd /root && tar xvf /root/$qtPkg \

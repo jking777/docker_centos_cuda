@@ -10,9 +10,10 @@ yum install -y \
         gettext-devel.x86_64 \
         openssl-devel.x86_64
 
-source scl_source enable devtoolset-2 2>/dev/null || echo GCC 4.8 enabled
+# Don't use devtoolset-2 for this config
+#source scl_source enable devtoolset-2 2>/dev/null || echo GCC 4.8 enabled
 
-git_version=2.9.3
+git_version=2.18.0
 gitTag=git-${git_version}
 gitPkg=git-v${git_version}.tar.gz
 gitUrl=https://codeload.github.com/git/git/tar.gz/v$git_version

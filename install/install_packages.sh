@@ -36,6 +36,18 @@ yum install -y \
         fontconfig-devel \
         mesa-libGL-devel
 
+yum install -y \
+				cpp-4.4.7 \
+				gcc-4.4.7 \
+				gcc-c++-4.4.7 \
+				gcc-gfortran-4.4.7 \
+				gcc-gnat-4.4.7 \
+				gcc-java-4.4.7 \
+				gcc-objc++-4.4.7 \
+				gcc-objc-4.4.7
+
+yum install -y openmotif-devel
+
 # setup EPEL repo for given CentOS version --------------------------------------------------------
 fedoraUrl=https://dl.fedoraproject.org/pub/epel
 case "$1" in

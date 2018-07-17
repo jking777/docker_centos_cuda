@@ -1,17 +1,19 @@
 #FROM centos:5
-#FROM centos:6
-FROM centos:7
-LABEL Description="CentOS with various CUDA versions for quick build of producs based on customer configuration"
-MAINTAINER Marius Storm-Olsen <mstormo@gmail.com>
+FROM centos:6
+#FROM centos:7
+LABEL Description="CentOS with various CUDA versions for quick build of products based on customer configuration"
+MAINTAINER Jim King <jim@jimking.net>
 
-ARG os_ver=7
-ARG cuda_ver=9.1
+ARG os_ver=6
+ARG cuda_ver=8.0
 
 # add a few volumes useful for the image
 #     /sources  - persistant storage for application sources (host FS)
 #     /build    - persistant storage for application building (host if same FS, or docker volume)
 #     /data     - persistant storage for data needed by applications (host FS)
-VOLUME ["/sources", "/builds", "/data"]
+#     /headwave - storage for Headwave (and Headwave SDK)
+#     /hw_3rd_party - storage for third party needed for Headwave plugin builds
+VOLUME ["/sources", "/builds", "/data", "/headwave", "/hw_3rd_party"]
 
 # add SVN repo
 COPY wandisco-svn.repo /etc/yum.repos.d/wandisco-svn.repo
