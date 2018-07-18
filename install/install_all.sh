@@ -18,7 +18,8 @@ echo_total packages_start packages_stop Basic packages installed!
 #echo_total devtools_start devtools_stop Devtoolset installed!
 
 # make sure we use gcc/g++ 4.8 for building here on out
-source scl_source enable devtoolset-2 >/dev/null 2>&1 || echo GCC 4.8 enabled
+# Don't use devtoolset-2 for this config
+#source scl_source enable devtoolset-2 >/dev/null 2>&1 || echo GCC 4.8 enabled
 
 now ccache_start
 /root/install/install_ccache.sh			$os_ver

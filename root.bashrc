@@ -11,7 +11,8 @@ export CCACHE_DIR=/builds/ccache
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 # use devtoolset-2 as default, ignoring failure
-source scl_source enable devtoolset-2 >/dev/null 2>&1
+# Don't use devtoolset-2 for this config
+#source scl_source enable devtoolset-2 >/dev/null 2>&1
 
 alias ls='ls --color=auto'
 alias ll='ls -la'
