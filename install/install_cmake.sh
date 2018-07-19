@@ -10,7 +10,7 @@
 # only symlink cmake on CentOS 5
 #[ $1 -eq 5 ] && ln -s /usr/bin/cmake28 /usr/bin/cmake || echo Not symlinking cmake28, CentOS > 5
 
-# install cmake 3.9.0 -----------------------------------------------------------------------------
+# install cmake 3.10.3 -----------------------------------------------------------------------------
 
 curldev=libcurl-devel.x86_64
 [ $1 -eq 5 ] && curldev=curl-devel.x86_64
@@ -22,7 +22,7 @@ yum install -y \
 cd /tmp
 git clone https://github.com/Kitware/CMake.git
 cd CMake
-git checkout tags/v3.9.0
+git checkout tags/v3.10.3
 ./bootstrap --prefix=/usr && make && make install
 cd / && rm -rf /tmp/CMake
 
