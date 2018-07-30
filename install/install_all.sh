@@ -51,10 +51,12 @@ now openssh_start
 now openssh_stop
 echo_total openssh_start openssh_stop OpenSSH Server installed!
 
-now cuda_start
-/root/install/install_cuda.sh 			$cuda_ver
-now cuda_stop
-echo_total cuda_start cuda_stop Cuda $cuda_ver installed!
+# don't need CUDA for importers
+#now cuda_start
+#/root/install/install_cuda.sh 			$cuda_ver
+#now cuda_stop
+#echo_total cuda_start cuda_stop Cuda $cuda_ver installed!
+echo No CUDA for importer builds
 
 now qt_start
 /root/install/install_qt.sh			$os_ver

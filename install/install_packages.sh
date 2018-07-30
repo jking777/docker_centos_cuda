@@ -46,6 +46,7 @@ yum install -y \
 				gcc-objc++-4.4.7 \
 				gcc-objc-4.4.7
 
+# for OpenWorks
 yum install -y openmotif-devel
 
 # setup EPEL repo for given CentOS version --------------------------------------------------------
@@ -58,3 +59,6 @@ esac
 cd /root && wget ${fedoraUrl}/epel-release-latest-${1}.noarch.rpm
 rpm -Uvhi /root/epel-release-latest-${1}.noarch.rpm
 rm /root/epel-release-latest-${1}.noarch.rpm
+
+# for DAS importer (from EPEL)
+yum install -y hdf5-devel hdf5-static

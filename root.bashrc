@@ -1,6 +1,8 @@
 OSname=`cat /etc/redhat-release | cut -d' ' -f1`
 OSver=`cat /etc/redhat-release | sed -re 's/^[A-Za-z ]* ([0-9]+.[0-9]+).*$/\1/'`
-CUver=`/usr/local/cuda/bin/nvcc --version | grep release | cut -d' ' -f5 | cut -d',' -f1`
+
+# no CUDA in this config
+#CUver=`/usr/local/cuda/bin/nvcc --version | grep release | cut -d' ' -f5 | cut -d',' -f1`
 
 eval $(dircolors -b $HOME/.dircolors)
 
@@ -16,3 +18,9 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 alias ls='ls --color=auto'
 alias ll='ls -la'
+
+# settings used for import plugin builds
+export HEADWAVE_DIR=/headwave
+export HEADWAVE_EXT_BIN=/builds/hwextensions
+export HEADWAVE_PLUGIN_BIN=/builds/hwplugins
+export HEADWAVE_THIRD_PARTY_DIR=/hw_3rd_party
